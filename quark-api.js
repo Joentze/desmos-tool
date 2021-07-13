@@ -3,7 +3,7 @@
 //sends uri for png
 window.addEventListener('message',event =>{
     console.log('receiving a message')
-    if(event.data[fn] == "downloadPNG"){
+    if(event.data == "downloadPNG"){
         
         let uri = calculator.screenshot()
         let type = 'downloadPNG'
@@ -13,7 +13,7 @@ window.addEventListener('message',event =>{
             'uri':uri
         }, event.origin)
     }
-    else if(event.data[fn] == "quark_get_obj"){
+    else if(event.data == "quark_get_obj"){
         
         let obj = calculator.getState()
         let type = 'calculatorState'
@@ -23,7 +23,7 @@ window.addEventListener('message',event =>{
             'obj':obj
         }, event.origin)
     }
-    else if(event.data[fn] == "quark_set_data"){
+    else if(event.data == "quark_set_data"){
         let obj = calculator.setState(event.data[payload])
         let type = 'calculatorState'
     }
