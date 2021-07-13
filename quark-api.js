@@ -3,7 +3,6 @@
 //sends uri for png
 window.addEventListener('message',event =>{
     console.log('receiving a message')
-    console.log(event.data)
     if(event.data[fn] == "downloadPNG"){
         
         let uri = calculator.screenshot()
